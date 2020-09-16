@@ -16,4 +16,5 @@ Mögliche Punkte:
 * Daten bzw. History speichern: Persistenz / Offlinefähigkeit 1 bis 3 Punkte
 * Zwei Screens mit verschiedenen Funktionen (aktuell/History): Funktionalität (pro Funktion / Screen) 1 bis 5 Punkte
 * Verwendung von Notifications 1 bis 2 Punkte
+* Integration von Drittkomponenten (Libraries) 1 bis 3 Punkte (wahrscheinlich https://github.com/kizitonwose/CalendarView)
 * Unit-Tests: 1 bis 3 Punkte / Ressourcen: Unterschiedliche Styles (z.B. Dark-Theme) 1 bis 2 Punkte
