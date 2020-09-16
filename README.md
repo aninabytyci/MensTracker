@@ -3,10 +3,10 @@ Der MensTracker ermöglicht Frauen*, ihre Periode digital zu tracken: In einem K
 
 ## Features
 * 2 Screens:
-  * 1 Screen mit einem Kalender, um die aktuellen Daten einzutragen und einzusehen (erwartet, von, bis)
-  * 1 Screen, um alle eingetragenen Daten anzusehen (erwartet, von, bis)
+  * 1 Screen mit einem Kalender, um die aktuellen Daten einzutragen und einzusehen (erwartet, von, bis) in Form einer Kalenderansicht
+  * 1 Screen, um alle eingetragenen Daten anzusehen (erwartet, von, bis) in Form einer Tabelle
 * Die App ist in Kotlin geschrieben
-* Notification 1 Woche vor dem erwarteten Beginn der Periode (optional)
+* Notification 1 Woche vor dem erwarteten Beginn der Periode
 
 ## Bezug zum Miniprojekt
 Der MensTracker ist eines der Miniprojekte im Modul "Mobile und GUI-Engineering" im Herbstsemester 2020, innerhalb von 7 Wochen muss das Projekt beendet werden.
@@ -16,3 +16,4 @@ Mögliche Punkte:
 * Daten bzw. History speichern: Persistenz / Offlinefähigkeit 1 bis 3 Punkte
 * Zwei Screens mit verschiedenen Funktionen (aktuell/History): Funktionalität (pro Funktion / Screen) 1 bis 5 Punkte
 * Verwendung von Notifications 1 bis 2 Punkte
+* Unit-Tests: 1 bis 3 Punkte / Ressourcen: Unterschiedliche Styles (z.B. Dark-Theme) 1 bis 2 Punkte
