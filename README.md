@@ -1,5 +1,5 @@
 # MensTracker
-Der MensTracker ermöglicht Frauen*, ihre Periode digital zu tracken: In einem Kalender können sie eintragen, wann die Periode erwartet wird, wann sie effektiv begonnen und wann geendet hat. Im Gegensatz zu existierenden Trackern speichert die App die Daten lokal und sammelt keine Daten der Nutzerin.
+Der MensTracker ermöglicht Frauen, ihre Periode digital zu tracken: In einem Kalender können sie eintragen, wann die Periode erwartet wird, wann sie effektiv begonnen und wann geendet hat. Im Gegensatz zu existierenden Trackern speichert die App die Daten lokal und sammelt keine Daten der Nutzerin.
 
 ## Features
 * 2 Screens:
@@ -14,7 +14,9 @@ Mögliche Punkte:
 
 * Verwendung von Kotlin statt Java (pro Teammitglied): 3 Punkte
 * Daten bzw. History speichern: Persistenz / Offlinefähigkeit 1 bis 3 Punkte
+  * https://developer.android.com/training/data-storage
 * Zwei Screens mit verschiedenen Funktionen (aktuell/History): Funktionalität (pro Funktion / Screen) 1 bis 5 Punkte
 * Verwendung von Notifications 1 bis 2 Punkte
-* Integration von Drittkomponenten (Libraries) 1 bis 3 Punkte (wahrscheinlich https://github.com/kizitonwose/CalendarView)
+* Integration von Drittkomponenten (Libraries) 1 bis 3 Punkte
+  * wahrscheinlich https://github.com/kizitonwose/CalendarView
 * Unit-Tests: 1 bis 3 Punkte / Ressourcen: Unterschiedliche Styles (z.B. Dark-Theme) 1 bis 2 Punkte
