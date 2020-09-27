@@ -14,9 +14,30 @@ Mögliche Punkte:
 
 * Verwendung von Kotlin statt Java (pro Teammitglied): 3 Punkte
 * Daten bzw. History speichern: Persistenz / Offlinefähigkeit 1 bis 3 Punkte
-  * https://developer.android.com/training/data-storage
 * Zwei Screens mit verschiedenen Funktionen (aktuell/History): Funktionalität (pro Funktion / Screen) 1 bis 5 Punkte
 * Verwendung von Notifications 1 bis 2 Punkte
 * Integration von Drittkomponenten (Libraries) 1 bis 3 Punkte
-  * wahrscheinlich https://github.com/kizitonwose/CalendarView
 * Unit-Tests: 1 bis 3 Punkte / Ressourcen: Unterschiedliche Styles (z.B. Dark-Theme) 1 bis 2 Punkte
+
+## Links
+
+Kalender-Funktion (Drittkomponente einbinden):
+
+* https://github.com/kizitonwose/CalendarView
+* Anleitung für eine CalendarView: https://www.c-sharpcorner.com/article/how-to-create-calendar-view-in-android-application/
+* Tutorial für CalendarPicker: https://www.youtube.com/watch?v=AN6UNJ-UC54
+* Tutorial für eine CalendarView: https://www.youtube.com/watch?v=5WVEbU_bTeg
+
+Persistenz / Daten speichern:
+
+* Arten, Daten zu persistieren: 
+  https://developer.android.com/training/data-storage
+  * App-specific files: Alle Daten z.B. in 1 Json-File speichern
+    https://developer.android.com/training/data-storage/app-specific
+  * Database for structured Data: Room ==> zu komplex für unsere Bedürfnisse?
+    https://developer.android.com/training/data-storage/room
+* JSON-Reader and -Writer: 
+  https://developer.android.com/reference/android/util/JsonWriter
+* Data Binding, Teil von Android Jetpack: View mit den darunterliegenden Daten verbinden. 
+  https://developer.android.com/topic/libraries/data-binding?hl=en
+
