@@ -1,5 +1,5 @@
 # MensTracker
-Der MensTracker ermöglicht Frauen, ihre Periode digital zu tracken: In einem Kalender können sie eintragen, wann die Periode erwartet wird, wann sie effektiv begonnen und wann geendet hat. Im Gegensatz zu existierenden Trackern speichert die App die Daten lokal und sammelt keine Daten der Nutzerin.
+Der MensTracker ermöglicht Frauen, ihre Periode digital zu tracken: In einem Kalender können sie eintragen, wann die Periode erwartet wird, wann sie effektiv begonnen und wann geendet hat. Im Gegensatz zu existierenden Trackern speichert die App die Daten lokal und [sammelt keine Daten der Nutzerin](https://media.ccc.de/v/36c3-10693-no_body_s_business_but_mine_a_dive_into_menstruation_apps).
 
 ## Features
 * 2 Screens:
