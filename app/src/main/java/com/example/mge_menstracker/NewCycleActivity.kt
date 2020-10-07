@@ -8,7 +8,7 @@ import android.widget.Button
 class CalendarActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calendar2)
+        setContentView(R.layout.activity_expectedcycle)
 
         val abortButton = findViewById<Button>(R.id.abortbtn)
         abortButton.setOnClickListener{
