@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalendarActivity">
+    tools:context=".NextExpectedCycleActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,11 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addbutton"
+        android:id="@+id/button_addnew"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
-        android:text="Add new period"
+        android:text="@string/button_addnewperiod"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"

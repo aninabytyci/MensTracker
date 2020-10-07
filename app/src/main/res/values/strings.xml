@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MGE_MensTracker</string>
+    <string name="button_abort">Abort</string>
+    <string name="button_next">Next</string>
+    <string name="button_finish">Finish</string>
+    <string name="button_addnewperiod">Add new period</string>
 </resources>

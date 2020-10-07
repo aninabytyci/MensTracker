@@ -10,9 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.addbutton)
+        val button = findViewById<Button>(R.id.button_addnew)
         button.setOnClickListener{
-            val intent = Intent(this, CalendarActivity::class.java)
+            val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }
 

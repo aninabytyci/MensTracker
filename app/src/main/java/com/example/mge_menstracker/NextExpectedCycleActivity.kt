@@ -12,7 +12,7 @@ import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
 
-class CalendarActivity : AppCompatActivity() {
+class NextExpectedCycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_newcycle)
@@ -25,7 +25,7 @@ class CalendarActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addDataButton)
         addButton.setOnClickListener{
-            val intent = Intent(this, CalendarActivity2::class.java)
+            val intent = Intent(this, NewCycleActivity::class.java)
             startActivity(intent);
         }
 
