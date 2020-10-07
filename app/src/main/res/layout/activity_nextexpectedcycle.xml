@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalendarActivity2">
+    tools:context=".NewCycleActivity">
 
     <Button
         android:id="@+id/abortbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Abort"
+        android:text="@string/button_abort"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addRangeButton"
         app:layout_constraintHorizontal_weight="1"
@@ -22,8 +23,8 @@
         android:id="@+id/addRangeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Add expected date"
-        android:textSize="15dp"
+        android:text="@string/button_finish"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
