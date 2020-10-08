@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.main.tracker.model.Cycle;
 
-class PeriodAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<PeriodViewHolder>() {
+class CycleAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
     private var cycles: ArrayList<Cycle>
 
     override fun getItemCount(): Int {
@@ -20,7 +20,7 @@ class PeriodAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<PeriodViewH
     }
 
     @NonNull
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeriodViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CycleViewHolder {
         val context = parent.getContext()
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(
@@ -31,16 +31,14 @@ class PeriodAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<PeriodViewH
         val expectedTextView: TextView = view.findViewById(android.R.id.text1)
         val fromTextView: TextView = view.findViewById(android.R.id.text1)
         val toTextView: TextView = view.findViewById(android.R.id.text1)
-        return PeriodViewHolder(view, expectedTextView, fromTextView, toTextView)
+        return CycleViewHolder(view, expectedTextView, fromTextView, toTextView)
     }
 
-    override fun onBindViewHolder(holder: PeriodViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CycleViewHolder, position: Int) {
         val cycle = this.cycles.get(position)
         holder.expectedTextView.setText(cycle.expected.toString())
         holder.fromTextView.setText(cycle.to.toString())
         holder.toTextView.setText(cycle.from.toString())
-
-
     }
 
 

@@ -4,10 +4,10 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PeriodViewHolder(parent: View,
-                       expected: TextView,
-                       from: TextView,
-                       to: TextView) : RecyclerView.ViewHolder(parent) {
+class CycleViewHolder(parent: View,
+                      expected: TextView,
+                      from: TextView,
+                      to: TextView) : RecyclerView.ViewHolder(parent) {
     var expectedTextView: TextView
     var fromTextView: TextView
     var toTextView: TextView
