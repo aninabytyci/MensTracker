@@ -1,4 +1,4 @@
-package com.example.mge_menstracker
+package com.main.tracker
 
 import org.junit.Test
 
