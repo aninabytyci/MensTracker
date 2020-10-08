@@ -1,4 +1,4 @@
-package com.example.mge_menstracker.model
+package com.main.tracker.model
 
 import java.time.LocalDate
 

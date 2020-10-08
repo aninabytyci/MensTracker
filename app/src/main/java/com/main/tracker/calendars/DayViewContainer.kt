@@ -1,8 +1,8 @@
-package com.example.mge_menstracker.calendars
+package com.main.tracker.calendars
 
 import android.view.View
 import android.widget.TextView
-import com.example.mge_menstracker.R
+import com.main.tracker.R
 import com.kizitonwose.calendarview.ui.ViewContainer
 
 class DayViewContainer(view: View) : ViewContainer(view) {

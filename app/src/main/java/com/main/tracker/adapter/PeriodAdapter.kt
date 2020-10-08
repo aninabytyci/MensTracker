@@ -1,4 +1,4 @@
-package com.example.mge_menstracker.adapter
+package com.main.tracker.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 
-import com.example.mge_menstracker.model.Cycle;
+import com.main.tracker.model.Cycle;
 
 class PeriodAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<PeriodViewHolder>() {
     private var cycles: ArrayList<Cycle>

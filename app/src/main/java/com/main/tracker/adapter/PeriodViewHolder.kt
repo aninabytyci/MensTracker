@@ -1,4 +1,4 @@
-package com.example.mge_menstracker.adapter
+package com.main.tracker.adapter
 
 import android.view.View
 import android.widget.TextView

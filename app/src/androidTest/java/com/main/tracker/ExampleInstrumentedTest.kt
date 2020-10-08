@@ -1,4 +1,4 @@
-package com.example.mge_menstracker
+package com.main.tracker
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
