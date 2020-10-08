@@ -1,9 +1,10 @@
-package com.example.mge_menstracker
+package com.example.mge_menstracker.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.mge_menstracker.R
 
 class NewCycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
