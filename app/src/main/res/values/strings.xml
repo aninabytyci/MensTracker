@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MGE_MensTracker</string>
+    <string name="app_name">MensTracker</string>
     <string name="button_abort">Abort</string>
     <string name="button_next">Next</string>
     <string name="button_finish">Finish</string>
