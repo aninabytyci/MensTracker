@@ -23,11 +23,12 @@ class CycleAdapter(cycles: ArrayList<Cycle>) : RecyclerView.Adapter<CycleViewHol
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CycleViewHolder {
         val context = parent.getContext()
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(
+        val view = inflater.inflate( // TODO change layout so that it shows tabluar data
             android.R.layout.simple_list_item_2,
             parent,
             false
         )
+        // TODO change layout so that it shows tabular data
         val expectedTextView: TextView = view.findViewById(android.R.id.text1)
         val fromTextView: TextView = view.findViewById(android.R.id.text1)
         val toTextView: TextView = view.findViewById(android.R.id.text1)
