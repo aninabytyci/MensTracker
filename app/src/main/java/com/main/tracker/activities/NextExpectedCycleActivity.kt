@@ -1,15 +1,18 @@
 package com.main.tracker.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import com.main.tracker.calendars.DayViewContainer
-import com.main.tracker.R
+import androidx.appcompat.app.AppCompatActivity
 import com.kizitonwose.calendarview.CalendarView
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.ui.DayBinder
+import com.main.tracker.R
+import com.main.tracker.calendars.DayViewContainer
+import com.main.tracker.model.Cycle
+import com.main.tracker.model.CycleRepository
+import java.time.LocalDate
 import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
@@ -27,6 +30,7 @@ class NextExpectedCycleActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addDataButton)
         addButton.setOnClickListener{
+            addEntry() // TODO add user input
             val intent = Intent(this, NewCycleActivity::class.java)
             startActivity(intent);
         }
@@ -48,5 +52,10 @@ class NextExpectedCycleActivity : AppCompatActivity() {
         val firstDayOfWeek = WeekFields.of(Locale.getDefault()).firstDayOfWeek
         calendarView.setup(firstMonth, lastMonth, firstDayOfWeek)
         calendarView.scrollToMonth(currentMonth)
+    }
+
+    private fun addEntry() { // TODO: replace with value "expected", entered by User
+        val cycle = Cycle(LocalDate.parse("2000-01-01"))
+        CycleRepository.cycles.addLast(cycle)
     }
 }
