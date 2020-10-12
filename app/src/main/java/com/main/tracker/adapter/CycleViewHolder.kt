@@ -6,14 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CycleViewHolder(parent: View,
                       expected: TextView,
-                      from: TextView,
-                      to: TextView) : RecyclerView.ViewHolder(parent) {
-    var expectedTextView: TextView
-    var fromTextView: TextView
-    var toTextView: TextView
+                      fromto: TextView,
+                      ) : RecyclerView.ViewHolder(parent) {
+    var expectationTextView: TextView
+    var realityTextView: TextView
     init {
-        this.expectedTextView = expected
-        this.fromTextView = from
-        this.toTextView = to
+        this.expectationTextView = expected
+        this.realityTextView = fromto
+
     }
 }

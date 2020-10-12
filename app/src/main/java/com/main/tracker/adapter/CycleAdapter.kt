@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.main.tracker.R
 
 import com.main.tracker.model.Cycle;
 import java.util.*
-import kotlin.collections.ArrayList
 
 class CycleAdapter(cycles: LinkedList<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
     private var cycles: LinkedList<Cycle>
@@ -25,23 +25,30 @@ class CycleAdapter(cycles: LinkedList<Cycle>) : RecyclerView.Adapter<CycleViewHo
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CycleViewHolder {
         val context = parent.getContext()
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate( // TODO change layout so that it shows tabluar data
-            android.R.layout.simple_list_item_2,
+        val view = inflater.inflate(
+            R.layout.three_line_list_item,
             parent,
             false
         )
-        // TODO change layout so that it shows tabular data
-        val expectedTextView: TextView = view.findViewById(android.R.id.text1)
-        val fromTextView: TextView = view.findViewById(android.R.id.text1)
-        val toTextView: TextView = view.findViewById(android.R.id.text1)
-        return CycleViewHolder(view, expectedTextView, fromTextView, toTextView)
+        val expectationTextView: TextView = view.findViewById(R.id.show_expectation)
+        val realityTextView: TextView = view.findViewById(R.id.show_reality)
+
+        return CycleViewHolder(view, expectationTextView, realityTextView)
     }
 
     override fun onBindViewHolder(holder: CycleViewHolder, position: Int) {
         val cycle = this.cycles.get(position)
-        holder.expectedTextView.setText(cycle.expected.toString())
-        holder.fromTextView.setText(cycle.to.toString())
-        holder.toTextView.setText(cycle.from.toString())
+        holder.expectationTextView.text = "Expectation: " + cycle.expected.toString()
+        // TODO: extracting String + input does not work:
+        //  holder.expectationTextView.text = getString(R.string.expectation_list, cycle.expected.toString())
+        if (cycle.from != null) {
+            holder.realityTextView.text = "Reality: " + cycle.from.toString() + " - " + cycle.to.toString()
+        } else {
+            holder.realityTextView.text = ""
+        }
+
+
+
     }
 
 

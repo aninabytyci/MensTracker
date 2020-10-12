@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.mens_overview)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
+
         recyclerView.addItemDecoration(dividerItemDecoration)
 
         val button = findViewById<Button>(R.id.button_addnew)
