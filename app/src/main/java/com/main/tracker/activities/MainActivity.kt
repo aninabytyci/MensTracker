@@ -7,10 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.main.tracker.R
 import com.main.tracker.adapter.CycleAdapter
 import com.main.tracker.adapter.CycleViewHolder
 import com.main.tracker.model.CycleRepository
+import com.main.tracker.model.storage.CycleDao
+import com.main.tracker.model.storage.CycleDatabase
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +22,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // TODO how to have the db load at startup and have it available across all activities?
+        // Database stuff
+        val db: CycleDatabase = Room.databaseBuilder(
+            this,
+            CycleDatabase::class.java,
+            "roomcycles.db"
+        ).build()
+
+        val CycleDao = db.entryDao()
+
+
+        // rest
 
         setContentView(R.layout.activity_main)
 
