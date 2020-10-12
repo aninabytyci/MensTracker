@@ -48,10 +48,18 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.addItemDecoration(dividerItemDecoration)
 
-        val button = findViewById<Button>(R.id.button_addnew)
+        val button = findViewById<Button>(R.id.addNewButton)
         button.setOnClickListener{
-            val intent = Intent(this, NextExpectedCycleActivity::class.java)
-            startActivity(intent);
+            if (CycleRepository.cycles.isEmpty()) {
+                val intent = Intent(this, NextExpectedCycleActivity::class.java)
+                startActivity(intent);
+            } else {
+                val intent = Intent(this, NewCycleActivity::class.java)
+                startActivity(intent);
+            }
+            /*
+            val intent = Intent(this, NewCycleActivity::class.java)
+            startActivity(intent);*/
         }
 
     }
