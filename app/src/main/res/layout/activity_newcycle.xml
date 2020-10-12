@@ -17,20 +17,20 @@
 
 
     <Button
-        android:id="@+id/abortbutton"
+        android:id="@+id/abortButton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_abort"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addDataButton"
+        app:layout_constraintEnd_toStartOf="@+id/addNewCycleButton"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
-        android:id="@+id/addDataButton"
+        android:id="@+id/addNewCycleButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_next"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/abortbutton"
+        app:layout_constraintStart_toEndOf="@+id/abortButton1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
