@@ -8,12 +8,12 @@
     tools:context=".activities.NextExpectedCycleActivity">
 
 
-    <com.kizitonwose.calendarview.CalendarView
-        android:id="@+id/calendarView"
+    <com.squareup.timessquare.CalendarPickerView
+        android:id="@+id/calendar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cv_dayViewResource="@layout/calendar_day_layout"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 
     <Button

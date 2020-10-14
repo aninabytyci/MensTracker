@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kizitonwose.calendarview.CalendarView
 import com.kizitonwose.calendarview.model.CalendarDay
@@ -12,6 +13,8 @@ import com.main.tracker.R
 import com.main.tracker.calendars.DayViewContainer
 
 import com.main.tracker.model.CycleRepository
+import com.squareup.timessquare.CalendarPickerView
+import java.text.DateFormat
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.temporal.WeekFields
@@ -23,23 +26,20 @@ class NewCycleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_newcycle)
 
-        val calendarView = findViewById<CalendarView>(R.id.calendarView)
-        calendarView.dayBinder = object : DayBinder<DayViewContainer> {
-            // Called only when a new container is needed.
-            override fun create(view: View) = DayViewContainer(view)
+        val today = Date()
+        val nextYear = Calendar.getInstance()
+        nextYear.add(Calendar.YEAR,1)
+        val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
+        datePicker.init(today, nextYear.time)
 
-            // Called every time we need to reuse a container.
-            override fun bind(container: DayViewContainer, day: CalendarDay) {
-                container.textView.text = day.date.dayOfMonth.toString()
+        datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
+            override fun onDateSelected(date: Date) {
+                val selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date)
+                Toast.makeText(this@NewCycleActivity, selectedDate, Toast.LENGTH_SHORT).show()
             }
-        }
-
-        val currentMonth = YearMonth.now()
-        val firstMonth = currentMonth.minusMonths(1)
-        val lastMonth = currentMonth.plusMonths(1)
-        val firstDayOfWeek = WeekFields.of(Locale.getDefault()).firstDayOfWeek
-        calendarView.setup(firstMonth, lastMonth, firstDayOfWeek)
-        calendarView.scrollToMonth(currentMonth)
+            override fun onDateUnselected(date: Date) {
+            }
+        })
 
 
         val abortButton = findViewById<Button>(R.id.abortButton1)
