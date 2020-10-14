@@ -2,15 +2,20 @@ package com.main.tracker.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.kizitonwose.calendarview.CalendarView
+import com.kizitonwose.calendarview.model.CalendarDay
+import com.kizitonwose.calendarview.ui.DayBinder
 import com.main.tracker.R
+
 
 import com.main.tracker.model.CycleRepository
 import com.squareup.timessquare.CalendarPickerView
 import java.text.DateFormat
 import java.time.LocalDate
+
 import java.util.*
 
 class NewCycleActivity : AppCompatActivity() {
@@ -33,6 +38,7 @@ class NewCycleActivity : AppCompatActivity() {
             override fun onDateUnselected(date: Date) {
             }
         })
+
 
 
         val abortButton = findViewById<Button>(R.id.abortButton1)
