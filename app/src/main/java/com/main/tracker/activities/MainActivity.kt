@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         // Variante 2:
 
         // Database stuff
-
+        /*
         val db: CycleDatabase = Room.databaseBuilder(
             this,
             CycleDatabase::class.java,
@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val dao = db.cycleDao()
 
         val cycles: List<Cycle> = dao.getAllCycles()
+        **/
 
         setContentView(R.layout.activity_main)
 
