@@ -24,6 +24,7 @@ class CycleAdapter(cycles: LinkedList<Cycle>) : RecyclerView.Adapter<CycleViewHo
     @NonNull
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CycleViewHolder {
         val context = parent.getContext()
+
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(
             R.layout.three_line_list_item,
@@ -33,16 +34,19 @@ class CycleAdapter(cycles: LinkedList<Cycle>) : RecyclerView.Adapter<CycleViewHo
         val expectationTextView: TextView = view.findViewById(R.id.show_expectation)
         val realityTextView: TextView = view.findViewById(R.id.show_reality)
 
-        return CycleViewHolder(view, expectationTextView, realityTextView)
+        return CycleViewHolder(view, expectationTextView, realityTextView, context)
     }
 
     override fun onBindViewHolder(holder: CycleViewHolder, position: Int) {
         val cycle = this.cycles.get(position)
-        holder.expectationTextView.text = "Expectation: " + cycle.expected.toString()
-        // TODO: extracting String + input does not work:
-        //  holder.expectationTextView.text = getString(R.string.expectation_list, cycle.expected.toString())
+
+        // we need to retrieve the context, since adapter is not child of context, but context is part of activity, not adapter.
+        // solution: initialize CycleViewHolder with context object
+        holder.expectationTextView.text = holder.context.getString(R.string.expectation_list, cycle.expected.toString())
+
         if (cycle.from != null) {
-            holder.realityTextView.text = "Reality: " + cycle.from.toString() + " - " + cycle.to.toString()
+            holder.realityTextView.text = holder.context.getString(R.string.reality_list, cycle.from.toString(), cycle.to.toString())
+
         } else {
             holder.realityTextView.text = ""
         }

@@ -11,8 +11,9 @@ import androidx.room.Room
 import com.main.tracker.R
 import com.main.tracker.adapter.CycleAdapter
 import com.main.tracker.adapter.CycleViewHolder
+import com.main.tracker.model.Cycle
 import com.main.tracker.model.CycleRepository
-import com.main.tracker.model.storage.CycleDao
+import com.main.tracker.model.CycleRepository.cycles
 import com.main.tracker.model.storage.CycleDatabase
 
 
@@ -24,18 +25,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // TODO how to have the db load at startup and have it available across all activities?
+        // Variante 1: load db for every activity
+        // Variante 2:
+
+
         // Database stuff
+        /*
         val db: CycleDatabase = Room.databaseBuilder(
             this,
             CycleDatabase::class.java,
             "roomcycles.db"
         ).build()
 
-        val CycleDao = db.entryDao()
+        val dao = db.cycleDao()
 
-
-        // rest
-
+        val cycles: List<Cycle> = dao.getAllCycles()
+        */
         setContentView(R.layout.activity_main)
 
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
