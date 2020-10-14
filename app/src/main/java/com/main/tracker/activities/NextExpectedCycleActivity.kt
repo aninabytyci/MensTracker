@@ -22,7 +22,7 @@ class NextExpectedCycleActivity : AppCompatActivity() {
         val nextYear = Calendar.getInstance()
         nextYear.add(Calendar.YEAR,1)
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
-        datePicker.init(today, nextYear.time).inMode(CalendarPickerView.SelectionMode.RANGE)
+        datePicker.init(today, nextYear.time)
 
         datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {

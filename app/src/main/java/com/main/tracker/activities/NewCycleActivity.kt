@@ -2,22 +2,15 @@ package com.main.tracker.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.kizitonwose.calendarview.CalendarView
-import com.kizitonwose.calendarview.model.CalendarDay
-import com.kizitonwose.calendarview.ui.DayBinder
 import com.main.tracker.R
-import com.main.tracker.calendars.DayViewContainer
 
 import com.main.tracker.model.CycleRepository
 import com.squareup.timessquare.CalendarPickerView
 import java.text.DateFormat
 import java.time.LocalDate
-import java.time.YearMonth
-import java.time.temporal.WeekFields
 import java.util.*
 
 class NewCycleActivity : AppCompatActivity() {
@@ -30,7 +23,7 @@ class NewCycleActivity : AppCompatActivity() {
         val nextYear = Calendar.getInstance()
         nextYear.add(Calendar.YEAR,1)
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
-        datePicker.init(today, nextYear.time)
+        datePicker.init(today, nextYear.time).inMode(CalendarPickerView.SelectionMode.RANGE)
 
         datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {
@@ -54,7 +47,6 @@ class NewCycleActivity : AppCompatActivity() {
             val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }
-
     }
 
     private fun updateEntry() {
