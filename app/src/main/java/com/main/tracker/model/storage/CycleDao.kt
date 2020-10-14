@@ -13,7 +13,7 @@ interface CycleDao {
     fun insertCycle(cycle: Cycle) // returns rowId: long
 
     @Query("SELECT * from cycles")
-    fun loadAllCycles(): List<Cycle>
+    fun getAllCycles(): List<Cycle>
 
     @Update
     fun updateCycle(cycle: Cycle)

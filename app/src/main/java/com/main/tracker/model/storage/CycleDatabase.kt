@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.main.tracker.model.Cycle
 
 
-@Database(entities = [MutableMap.MutableEntry::class], version = 1)
+@Database(entities = [Cycle::class], version = 1)
 abstract class CycleDatabase : RoomDatabase() {
-    abstract fun entryDao(): Cycle?
+    abstract fun cycleDao(): CycleDao
 }
