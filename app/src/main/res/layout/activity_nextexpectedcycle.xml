@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.NewCycleActivity">
 
+    <com.squareup.timessquare.CalendarPickerView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <Button
         android:id="@+id/abortButton1"
         android:layout_width="0dp"
