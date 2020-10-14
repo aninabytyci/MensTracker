@@ -20,10 +20,13 @@ class Cycle(expectedDate: LocalDate) {
     var from: LocalDate? = null  // val = readonly, var = RW
 
     @ColumnInfo
-    var to: LocalDate? = null  // https://www.bignerdranch.com/blog/kotlin-when-to-use-lazy-or-lateinit/
+    var to: LocalDate? = null
 
     init {
         this.expected = expectedDate
     }
 
 }
+/* Innerhalb App: LocalDate, aber Room bzw. SQL erkennt LocalDate nicht
+*
+**/
