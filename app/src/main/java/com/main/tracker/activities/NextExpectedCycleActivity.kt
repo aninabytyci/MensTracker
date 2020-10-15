@@ -51,7 +51,7 @@ class NextExpectedCycleActivity : AppCompatActivity() {
     }
 
     private fun addNewCycleEntry() { // TODO: replace with value "expected", entered by User
-        val cycle = Cycle(LocalDate.parse("2000-01-01"), null, null)
+        val cycle = Cycle(LocalDate.parse("2000-01-01"), LocalDate.parse("1640-06-05"), LocalDate.parse("1640-06-05"))
         CycleRepository.addCycle(cycle)
     }
 }

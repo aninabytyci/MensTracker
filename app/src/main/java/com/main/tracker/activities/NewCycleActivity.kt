@@ -44,7 +44,7 @@ class NewCycleActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addNewCycleButton)
         addButton.setOnClickListener{
-            updateEntry(LocalDate.parse("1990-01-01"), LocalDate.parse("1990-01-20")) // TODO add user input
+            updateEntry(LocalDate.parse("2020-10-10"), LocalDate.parse("2020-10-10")) // TODO add user input
             val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }

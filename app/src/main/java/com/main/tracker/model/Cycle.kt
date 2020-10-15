@@ -13,8 +13,8 @@ import java.time.LocalDate
 @Entity(tableName = "cycles")
 @TypeConverters(DateTypeConverter::class)
 class Cycle(@ColumnInfo var expected: LocalDate,
-            @ColumnInfo var from: LocalDate?,
-            @ColumnInfo var to: LocalDate?) {
+            @ColumnInfo var from: LocalDate,
+            @ColumnInfo var to: LocalDate) {
     @PrimaryKey(autoGenerate = true)
     var id = 0
 

@@ -36,7 +36,7 @@ object CycleRepository {
             addCycle(Cycle(LocalDate.parse("2020-01-01"), LocalDate.parse("2020-01-01"), LocalDate.parse("2020-01-08")))
             addCycle(Cycle(LocalDate.parse("2020-02-02"), LocalDate.parse("2020-02-10"), LocalDate.parse("2020-02-17")))
             addCycle(Cycle(LocalDate.parse("2020-03-03"), LocalDate.parse("2020-03-05"), LocalDate.parse("2020-03-12"))            )
-            addCycle(Cycle(LocalDate.parse("2020-04-01"), null, null))
+            addCycle(Cycle(LocalDate.parse("2020-04-01"), LocalDate.parse("1640-06-05"), LocalDate.parse("1640-06-05")))
         }
     }
 

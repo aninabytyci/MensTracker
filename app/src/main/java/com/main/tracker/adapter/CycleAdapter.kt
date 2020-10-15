@@ -9,8 +9,7 @@ import com.main.tracker.R
 
 import com.main.tracker.model.Cycle;
 
-class CycleAdapter(cycles: List<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
-    private var cycles: List<Cycle> = cycles
+class CycleAdapter(private var cycles: List<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
 
     override fun getItemCount(): Int {
         return this.cycles.size
@@ -39,11 +38,11 @@ class CycleAdapter(cycles: List<Cycle>) : RecyclerView.Adapter<CycleViewHolder>(
         // solution: initialize CycleViewHolder with context object
         holder.expectationTextView.text = holder.context.getString(R.string.expectation_list, cycle.expected.toString())
 
-        if (cycle.from != null) {
-            holder.realityTextView.text = holder.context.getString(R.string.reality_list, cycle.from.toString(), cycle.to.toString())
+        if (cycle.from.toString() == "1640-06-05") {
+            holder.realityTextView.text = ""
 
         } else {
-            holder.realityTextView.text = ""
+            holder.realityTextView.text = holder.context.getString(R.string.reality_list, cycle.from.toString(), cycle.to.toString())
         }
 
 
