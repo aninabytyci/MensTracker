@@ -14,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     compileOptions {
@@ -36,7 +41,7 @@ dependencies {
     def room_version = "2.2.5"
 // Java:
 //    implementation "androidx.room:room-runtime:$room_version"
-//     annotationProcessor "androidx.room:room-compiler:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"  // kapt = Plugin
     implementation "androidx.recyclerview:recyclerview:1.1.0"
