@@ -16,7 +16,8 @@ interface CycleDao {
     @Query("SELECT * from cycles  ORDER BY id DESC")
     fun getAllCycles(): List<Cycle>
 
-    @Query("SELECT * from cycles WHERE `from` LIKE '1640-06-05'")
+    // @Query("SELECT * from cycles WHERE `from` LIKE '1640-06-05'")
+    @Query("SELECT * from cycles WHERE `from` is null")
     fun getNextExpectedCycle() : Cycle
 
     @Update

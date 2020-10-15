@@ -38,7 +38,7 @@ class CycleAdapter(private var cycles: List<Cycle>) : RecyclerView.Adapter<Cycle
         // solution: initialize CycleViewHolder with context object
         holder.expectationTextView.text = holder.context.getString(R.string.expectation_list, cycle.expected.toString())
 
-        if (cycle.from.toString() == "1640-06-05") {
+        if (cycle.from == null) {
             holder.realityTextView.text = ""
 
         } else {
