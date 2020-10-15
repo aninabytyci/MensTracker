@@ -29,7 +29,7 @@ class NewCycleActivity : AppCompatActivity() {
 
         datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {
-                val selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date)
+                val selectedDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date)
                 Toast.makeText(this@NewCycleActivity, selectedDate, Toast.LENGTH_SHORT).show()
             }
             override fun onDateUnselected(date: Date) {

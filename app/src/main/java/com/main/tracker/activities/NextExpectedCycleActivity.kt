@@ -25,14 +25,15 @@ class NextExpectedCycleActivity : AppCompatActivity() {
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
         datePicker.init(today, nextYear.time)
 
+
         datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {
-                val selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date)
+                val selectedDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date)
                 Toast.makeText(this@NextExpectedCycleActivity, selectedDate, Toast.LENGTH_SHORT).show()
             }
 
             override fun onDateUnselected(date: Date) {
-                TODO("Not yet implemented")
+
             }
         })
 
@@ -44,14 +45,14 @@ class NextExpectedCycleActivity : AppCompatActivity() {
 
         val finishButton = findViewById<Button>(R.id.addExpectedButton)
         finishButton.setOnClickListener{
-            addNewCycleEntry() // TODO add user input
+            addNewCycleEntry(LocalDate.parse(datePicker.selectedDate.toString())) // TODO add user input
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent);
         }
     }
 
-    private fun addNewCycleEntry() { // TODO: replace with value "expected", entered by User
-        val cycle = Cycle(LocalDate.parse("2000-01-01"), null, null)
+    private fun addNewCycleEntry(chosenExpectedDate: LocalDate) { // TODO: replace with value "expected", entered by User
+        val cycle = Cycle(chosenExpectedDate, null, null)
         CycleRepository.addCycle(cycle)
     }
 }
