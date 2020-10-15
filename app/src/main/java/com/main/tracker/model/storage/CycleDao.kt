@@ -13,7 +13,7 @@ interface CycleDao {
     @Insert
     fun insertCycle(cycle: Cycle) // returns rowId: long
 
-    @Query("SELECT * from cycles")
+    @Query("SELECT * from cycles  ORDER BY id DESC")
     fun getAllCycles(): List<Cycle>
 
     @Query("SELECT * from cycles WHERE `from` LIKE '1640-06-05'")
