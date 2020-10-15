@@ -11,12 +11,11 @@ import java.util.*
 @Dao
 interface CycleDao {
     @Insert
-    fun insertCycle(cycle: Cycle) // returns rowId: long
+    fun insertCycle(cycle: Cycle)
 
     @Query("SELECT * from cycles  ORDER BY id DESC")
     fun getAllCycles(): List<Cycle>
 
-    // @Query("SELECT * from cycles WHERE `from` LIKE '1640-06-05'")
     @Query("SELECT * from cycles WHERE `from` is null")
     fun getNextExpectedCycle() : Cycle
 

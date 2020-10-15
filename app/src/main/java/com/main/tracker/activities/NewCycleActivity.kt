@@ -44,13 +44,16 @@ class NewCycleActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addNewCycleButton)
         addButton.setOnClickListener{
-            updateEntry(LocalDate.parse("2020-10-10"), LocalDate.parse("2020-10-10")) // TODO add user input
+            val l = datePicker.selectedDates
+            val from = LocalDate.parse(l.get(0).toString())
+            val to = LocalDate.parse(l.get( (l.size - 1) ).toString() )
+            updateEntry(from, to) // TODO add user input
             val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }
     }
 
-    private fun updateEntry(from: LocalDate, to: LocalDate) {  // TODO adjust
+    private fun updateEntry(from: LocalDate, to: LocalDate) {
         CycleRepository.updateCycle(from, to)
     }
 
