@@ -36,8 +36,6 @@ class NewCycleActivity : AppCompatActivity() {
             }
         })
 
-
-
         val abortButton = findViewById<Button>(R.id.abortButton1)
         abortButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
@@ -46,15 +44,14 @@ class NewCycleActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addNewCycleButton)
         addButton.setOnClickListener{
-            updateEntry() // TODO add user input
+            updateEntry(LocalDate.parse("1990-01-01"), LocalDate.parse("1990-01-20")) // TODO add user input
             val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }
     }
 
-    private fun updateEntry() {
-        CycleRepository.cycles.first.from = LocalDate.parse("1990-01-01")
-        CycleRepository.cycles.first.to = LocalDate.parse("1990-01-20")
+    private fun updateEntry(from: LocalDate, to: LocalDate) {  // TODO adjust
+        CycleRepository.updateCycle(from, to)
     }
 
 }

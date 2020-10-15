@@ -6,6 +6,7 @@ import androidx.room.Query
 import androidx.room.Update
 
 import com.main.tracker.model.Cycle
+import java.util.*
 
 @Dao
 interface CycleDao {
@@ -15,7 +16,9 @@ interface CycleDao {
     @Query("SELECT * from cycles")
     fun getAllCycles(): List<Cycle>
 
+    @Query("SELECT * from cycles WHERE `from` IS NULL")
+    fun getNextExpectedCycle() : Cycle
+
     @Update
     fun updateCycle(cycle: Cycle)
-
 }

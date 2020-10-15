@@ -36,7 +36,6 @@ class NextExpectedCycleActivity : AppCompatActivity() {
             }
         })
 
-
         val abortButton = findViewById<Button>(R.id.abortButton1)
         abortButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
@@ -53,6 +52,6 @@ class NextExpectedCycleActivity : AppCompatActivity() {
 
     private fun addNewCycleEntry() { // TODO: replace with value "expected", entered by User
         val cycle = Cycle(LocalDate.parse("2000-01-01"), null, null)
-        CycleRepository.cycles.addFirst(cycle)
+        CycleRepository.addCycle(cycle)
     }
 }

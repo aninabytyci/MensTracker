@@ -8,17 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.main.tracker.R
 
 import com.main.tracker.model.Cycle;
-import java.util.*
 
-class CycleAdapter(cycles: LinkedList<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
-    private var cycles: LinkedList<Cycle>
+class CycleAdapter(cycles: List<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
+    private var cycles: List<Cycle> = cycles
 
     override fun getItemCount(): Int {
         return this.cycles.size
-    }
-
-    init {
-        this.cycles = cycles
     }
 
     @NonNull
