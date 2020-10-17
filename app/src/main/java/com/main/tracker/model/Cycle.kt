@@ -1,16 +1,19 @@
 package com.main.tracker.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.main.tracker.model.storage.DateTypeConverter
+
 import java.time.LocalDate
 
-class Cycle(expectedDate: LocalDate) {
-
-    var expected: LocalDate
-    var from: LocalDate? = null  // val = readonly, var = RW
-    var to: LocalDate? = null  // https://www.bignerdranch.com/blog/kotlin-when-to-use-lazy-or-lateinit/
-
-    init {
-        this.expected = expectedDate
-    }
+@Entity(tableName = "cycles")
+@TypeConverters(DateTypeConverter::class)
+class Cycle(@ColumnInfo var expected: LocalDate,
+            @ColumnInfo var from: LocalDate?,
+            @ColumnInfo var to: LocalDate?) {
+    @PrimaryKey(autoGenerate = true)
+    var id = 0
 
 }
-

@@ -12,6 +12,7 @@ import com.main.tracker.adapter.CycleAdapter
 import com.main.tracker.adapter.CycleViewHolder
 import com.main.tracker.model.CycleRepository
 
+
 class MainActivity : AppCompatActivity() {
 
     var adapter: RecyclerView.Adapter<CycleViewHolder>? = null
@@ -22,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
-        adapter = CycleAdapter(CycleRepository.cycles)
+        adapter = CycleAdapter(CycleRepository.getCycles())
+
         val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
 
         val recyclerView = findViewById<RecyclerView>(R.id.mens_overview)
@@ -33,16 +35,13 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.addNewButton)
         button.setOnClickListener{
-            if (CycleRepository.cycles.isEmpty()) {
+            if (CycleRepository.getCycles().isEmpty()) {
                 val intent = Intent(this, NextExpectedCycleActivity::class.java)
                 startActivity(intent);
             } else {
                 val intent = Intent(this, NewCycleActivity::class.java)
                 startActivity(intent);
             }
-            /*
-            val intent = Intent(this, NewCycleActivity::class.java)
-            startActivity(intent);*/
         }
 
     }

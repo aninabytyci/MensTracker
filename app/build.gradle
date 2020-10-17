@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -13,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     compileOptions {
@@ -32,6 +38,13 @@ android {
 }
 
 dependencies {
+    def room_version = "2.2.5"
+// Java:
+//    implementation "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"  // kapt = Plugin
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
@@ -42,4 +55,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10'
+
+
 }
