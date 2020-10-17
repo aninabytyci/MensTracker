@@ -6,9 +6,9 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.main.tracker.R
-
-
+import com.main.tracker.helpers.Converter.convertDatetoLocalDate
 import com.main.tracker.model.CycleRepository
+
 import com.squareup.timessquare.CalendarPickerView
 import java.text.DateFormat
 import java.time.LocalDate
@@ -23,16 +23,16 @@ class NewCycleActivity : AppCompatActivity() {
 
         val today = Date()
         val nextYear = Calendar.getInstance()
-        nextYear.add(Calendar.YEAR,1)
+        nextYear.add(Calendar.YEAR, 1)
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
         datePicker.init(today, nextYear.time).inMode(CalendarPickerView.SelectionMode.RANGE)
 
-        datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
+        datePicker.setOnDateSelectedListener(object : CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {
-                // TODO: How to get the selected Dates?
                 val selectedDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date)
                 Toast.makeText(this@NewCycleActivity, selectedDate, Toast.LENGTH_SHORT).show()
             }
+
             override fun onDateUnselected(date: Date) {
             }
         })
@@ -45,11 +45,10 @@ class NewCycleActivity : AppCompatActivity() {
 
         val addButton = findViewById<Button>(R.id.addNewCycleButton)
         addButton.setOnClickListener{
-            // TODO: getselectedDates yields a IndexOutOfBounds
-            val l = datePicker.selectedDates
-            val from = LocalDate.parse(l.get(0).toString())
-            val to = LocalDate.parse(l.get(1).toString() )
-            updateEntry(from, to) // TODO add user input
+            val from = convertDatetoLocalDate(datePicker.selectedDates.get(0))
+
+            val to = convertDatetoLocalDate(datePicker.selectedDates.get((datePicker.selectedDates.size - 1)))
+            updateEntry(from, to)
             val intent = Intent(this, NextExpectedCycleActivity::class.java)
             startActivity(intent);
         }
@@ -60,3 +59,4 @@ class NewCycleActivity : AppCompatActivity() {
     }
 
 }
+

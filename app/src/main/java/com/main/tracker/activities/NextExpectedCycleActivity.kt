@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.main.tracker.R
 import com.main.tracker.model.Cycle
 import com.main.tracker.model.CycleRepository
+import com.main.tracker.helpers.Converter.convertDatetoLocalDate
 import com.squareup.timessquare.CalendarPickerView
 import java.text.DateFormat
 import java.time.LocalDate
+import java.time.ZoneId
 import java.util.*
 
 
@@ -45,14 +47,16 @@ class NextExpectedCycleActivity : AppCompatActivity() {
 
         val finishButton = findViewById<Button>(R.id.addExpectedButton)
         finishButton.setOnClickListener{
-            addNewCycleEntry(LocalDate.parse(datePicker.selectedDate.toString())) // TODO add user input
+            val expected = convertDatetoLocalDate(datePicker.selectedDate)
+            addNewCycleEntry(expected)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent);
         }
     }
 
-    private fun addNewCycleEntry(chosenExpectedDate: LocalDate) { // TODO: replace with value "expected", entered by User
+    private fun addNewCycleEntry(chosenExpectedDate: LocalDate) {
         val cycle = Cycle(chosenExpectedDate, null, null)
         CycleRepository.addCycle(cycle)
     }
+
 }
