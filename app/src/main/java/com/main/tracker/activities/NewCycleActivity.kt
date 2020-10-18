@@ -21,11 +21,12 @@ class NewCycleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_newcycle)
 
-        val today = Date()
+        val previousMonths = Calendar.getInstance()
         val nextYear = Calendar.getInstance()
         nextYear.add(Calendar.YEAR, 1)
+        previousMonths.add(Calendar.MONTH, -2)
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
-        datePicker.init(today, nextYear.time).inMode(CalendarPickerView.SelectionMode.RANGE)
+        datePicker.init(previousMonths.time, nextYear.time).inMode(CalendarPickerView.SelectionMode.RANGE)
 
         datePicker.setOnDateSelectedListener(object : CalendarPickerView.OnDateSelectedListener {
             override fun onDateSelected(date: Date) {
