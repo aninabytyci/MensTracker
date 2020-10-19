@@ -45,9 +45,10 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"  // kapt = Plugin
     implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'com.google.android.material:material:1.2.1'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.squareup:android-times-square:1.6.5@aar'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
