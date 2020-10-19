@@ -24,6 +24,8 @@
         android:id="@+id/abortButton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_abort"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +39,8 @@
         android:id="@+id/addNewCycleButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_next"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +57,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/newCycleText"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

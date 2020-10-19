@@ -21,6 +21,8 @@
         android:id="@+id/abortButton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_abort"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +36,8 @@
         android:id="@+id/addExpectedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_finish"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,8 +51,9 @@
         android:id="@+id/chooseExpectedCycleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose the date of the next expected cycle:"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="15dp" />
+        android:text="@string/choose_the_date_of_your_next_expected_cycle"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
