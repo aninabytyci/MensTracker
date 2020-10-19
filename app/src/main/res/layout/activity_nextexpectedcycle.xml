@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".activities.NewCycleActivity">
 
+    <TextView
+        android:id="@+id/chooseExpectedCycleText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/choose_the_date_of_your_next_expected_cycle"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendar" />
+
     <com.squareup.timessquare.CalendarPickerView
         android:id="@+id/calendar"
         android:layout_width="0dp"
@@ -46,14 +55,5 @@
         app:layout_constraintStart_toEndOf="@+id/abortButton1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
-    <TextView
-        android:id="@+id/chooseExpectedCycleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/choose_the_date_of_your_next_expected_cycle"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
