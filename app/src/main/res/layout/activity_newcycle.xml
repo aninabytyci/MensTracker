@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".activities.NextExpectedCycleActivity">
 
+    <TextView
+        android:id="@+id/chooseNewCycleText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/newCycleText"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendar" />
 
     <com.squareup.timessquare.CalendarPickerView
         android:id="@+id/calendar"
@@ -24,6 +33,8 @@
         android:id="@+id/abortButton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_abort"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +48,8 @@
         android:id="@+id/addNewCycleButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/button_next"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,14 +59,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <TextView
-        android:id="@+id/chooseNewCycleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/newCycleText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

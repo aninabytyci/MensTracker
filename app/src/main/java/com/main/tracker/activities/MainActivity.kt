@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.main.tracker.R
 import com.main.tracker.adapter.CycleAdapter
 import com.main.tracker.adapter.CycleViewHolder
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.addItemDecoration(dividerItemDecoration)
 
-        val button = findViewById<Button>(R.id.addNewButton)
-        button.setOnClickListener{
+        val fab = findViewById<FloatingActionButton>(R.id.fab_addnewperiod)
+        fab.setOnClickListener{
             if (CycleRepository.getCycles().isEmpty()) {
                 val intent = Intent(this, NextExpectedCycleActivity::class.java)
                 startActivity(intent);
@@ -43,6 +44,5 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent);
             }
         }
-
     }
 }

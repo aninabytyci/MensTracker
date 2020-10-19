@@ -7,4 +7,5 @@
     <string name="expectation_list">Expectation: %1$s</string>
     <string name="reality_list">Reality: %1$s - %2$s</string>
     <string name="newCycleText">Choose begin and end of your period:</string>
+    <string name="choose_the_date_of_your_next_expected_cycle">Choose the date of your next expected cycle:</string>
 </resources>

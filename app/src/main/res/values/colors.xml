@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#8c185f</color>
+    <color name="colorPrimaryDark">#5a0035</color>
+    <color name="colorAccent">#bf4d8c</color>
+    <color name="colorSecondary">#ffde00</color>
+    <color name="colorSecondaryDark">#c7ad00</color>
+    <color name="colorSecondaryAccent">#ffff54</color>
+    <color name="TextColorprimary">#ffffff</color>
+    <color name="TextColorsecondary">#000000</color>
+
+    <!-- Change timesquare calendar library colors -->
+    <color name="calendar_active_month_bg">#fff5f7f9</color>
+    <color name="calendar_bg">#ffffffff</color>
+    <color name="calendar_divider">#ffbababa</color>
+    <color name="calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="calendar_selected_day_bg">#ffde00</color>
+    <color name="calendar_highlighted_day_bg">#ffff54</color>
+    <color name="calendar_selected_range_bg">#ffff54</color>
+    <color name="calendar_text_inactive">#40778088</color>
+    <color name="calendar_text_active">#ff778088</color>
+    <color name="calendar_text_selected">#000000</color>
+    <color name="calendar_text_unselectable">#7f778088</color>
+    <color name="calendar_text_highlighted">#ff778088</color>
 </resources>
