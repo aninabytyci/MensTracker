@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.main.tracker.R
 
 import com.main.tracker.model.Cycle;
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class CycleAdapter(private var cycles: List<Cycle>) : RecyclerView.Adapter<CycleViewHolder>() {
 
@@ -36,13 +38,16 @@ class CycleAdapter(private var cycles: List<Cycle>) : RecyclerView.Adapter<Cycle
 
         // we need to retrieve the context, since adapter is not child of context, but context is part of activity, not adapter.
         // solution: initialize CycleViewHolder with context object
-        holder.expectationTextView.text = holder.context.getString(R.string.expectation_list, cycle.expected.toString())
+        val expected = cycle.expected.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
+        holder.expectationTextView.text = holder.context.getString(R.string.expectation_list, expected)
 
         if (cycle.from == null) {
             holder.realityTextView.text = ""
 
         } else {
-            holder.realityTextView.text = holder.context.getString(R.string.reality_list, cycle.from.toString(), cycle.to.toString())
+            val from = cycle.from?.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
+            val to = cycle.to?.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
+            holder.realityTextView.text = holder.context.getString(R.string.reality_list, from, to)
         }
 
 
