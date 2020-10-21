@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">MensTracker</string>
     <string name="button_abort">Abort</string>
-    <string name="button_next">Add new</string>
-    <string name="button_finish">Add expected</string>
+    <string name="button_next">Add</string>
+    <string name="button_finish">Finish</string>
     <string name="button_addnewperiod">Add new period</string>
     <string name="expectation_list">Expectation: %1$s</string>
     <string name="reality_list">Reality: %1$s - %2$s</string>
     <string name="newCycleText">Choose begin and end of your period:</string>
-    <string name="choose_the_date_of_your_next_expected_cycle">Choose the date of your next expected cycle:</string>
+    <string name="nextExpectedCycleText">Choose the date of your next expected period:</string>
 </resources>

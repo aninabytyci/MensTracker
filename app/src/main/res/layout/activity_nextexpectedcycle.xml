@@ -9,11 +9,17 @@
     <TextView
         android:id="@+id/chooseExpectedCycleText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/choose_the_date_of_your_next_expected_cycle"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/nextExpectedCycleText"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/calendar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/calendar" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <com.squareup.timessquare.CalendarPickerView
         android:id="@+id/calendar"
