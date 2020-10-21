@@ -2,7 +2,6 @@ package com.main.tracker.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,13 +21,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         adapter = CycleAdapter(CycleRepository.getCycles())
-
         val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.mens_overview)
+        val recyclerView = findViewById<RecyclerView>(R.id.activity_main_overview)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 

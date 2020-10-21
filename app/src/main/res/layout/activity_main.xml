@@ -7,7 +7,7 @@
     tools:context=".activities.NextExpectedCycleActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mens_overview"
+        android:id="@+id/activity_main_overview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,8 +28,8 @@
         android:scaleType="center"
 
         app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/mens_overview"
-        app:layout_constraintEnd_toEndOf="@+id/mens_overview"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_overview"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_overview"
         app:srcCompat="@drawable/menstracker_launcher_foreground" />
 
 
