@@ -8,4 +8,6 @@
     <string name="reality_list">Reality: %1$s - %2$s</string>
     <string name="newCycleText">Choose begin and end of your period:</string>
     <string name="nextExpectedCycleText">Choose the date of your next expected period:</string>
+    <string name="no_data_available">no period has happened yet!</string>
+    <string name="a_bloddy_happy_droplet">a bloddy happy droplet</string>
 </resources>
