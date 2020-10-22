@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
+
         android:id="@+id/empty_view_droplet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
         app:layout_constraintStart_toStartOf="@+id/activity_main_overview"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/violet_water_drop_freesvg_org_newcolos" />
+        <!-- source: https://freesvg.org/violet-water-drop -->
 
     <TextView
         android:id="@+id/empty_view_text"
