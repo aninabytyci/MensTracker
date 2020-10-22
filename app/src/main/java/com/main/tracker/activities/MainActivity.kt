@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
             emptyViewText.visibility = View.INVISIBLE
         }
 
-
         val fab = findViewById<FloatingActionButton>(R.id.fab_addnewperiod)
         fab.setOnClickListener{
             if (CycleRepository.getCycles().isEmpty()) {

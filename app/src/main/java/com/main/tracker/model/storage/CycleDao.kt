@@ -6,7 +6,6 @@ import androidx.room.Query
 import androidx.room.Update
 
 import com.main.tracker.model.Cycle
-import java.util.*
 
 @Dao
 interface CycleDao {

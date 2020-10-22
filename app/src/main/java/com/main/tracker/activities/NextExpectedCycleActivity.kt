@@ -12,7 +12,6 @@ import com.main.tracker.helpers.Converter.convertDatetoLocalDate
 import com.squareup.timessquare.CalendarPickerView
 import java.text.DateFormat
 import java.time.LocalDate
-import java.time.ZoneId
 import java.util.*
 
 
@@ -35,7 +34,6 @@ class NextExpectedCycleActivity : AppCompatActivity() {
             }
 
             override fun onDateUnselected(date: Date) {
-
             }
         })
 

@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import com.main.tracker.model.storage.CycleDatabase
 import java.time.LocalDate
-import java.util.*
 
 
 object CycleRepository {
@@ -18,8 +17,8 @@ object CycleRepository {
             CycleDatabase::class.java,
             "roomcycles.db"
         ).allowMainThreadQueries().build()
-        /*
-        if (getCycles().isEmpty()) {  // TODO: change to show image instead of prepopulated db when empty
+        /* random data to populate the database
+        if (getCycles().isEmpty()) {
             addCycle(Cycle(LocalDate.parse("2020-01-01"), LocalDate.parse("2020-01-01"), LocalDate.parse("2020-01-08")))
             addCycle(Cycle(LocalDate.parse("2020-02-02"), LocalDate.parse("2020-02-10"), LocalDate.parse("2020-02-17")))
             addCycle(Cycle(LocalDate.parse("2020-03-03"), LocalDate.parse("2020-03-05"), LocalDate.parse("2020-03-12"))            )
@@ -38,7 +37,6 @@ object CycleRepository {
         expectedCycle.to = to
         database.cycleDao().updateCycle(expectedCycle)
     }
-
 
     fun getCycles(): List<Cycle> {
         return database.cycleDao().getAllCycles()
