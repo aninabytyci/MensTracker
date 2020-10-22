@@ -2,6 +2,8 @@ package com.main.tracker.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,12 +26,21 @@ class MainActivity : AppCompatActivity() {
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         adapter = CycleAdapter(CycleRepository.getCycles())
         val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-
         val recyclerView = findViewById<RecyclerView>(R.id.activity_main_overview)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
         recyclerView.addItemDecoration(dividerItemDecoration)
+
+        val emptyView = findViewById<TextView>(R.id.empty_view)
+        if (CycleRepository.getCycles().isEmpty()) {
+            recyclerView.visibility = View.INVISIBLE
+            emptyView.visibility = View.VISIBLE
+        } else {
+            recyclerView.visibility = View.VISIBLE
+            emptyView.visibility = View.INVISIBLE
+        }
+
 
         val fab = findViewById<FloatingActionButton>(R.id.fab_addnewperiod)
         fab.setOnClickListener{
