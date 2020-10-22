@@ -3,6 +3,7 @@ package com.main.tracker.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -32,13 +33,17 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.addItemDecoration(dividerItemDecoration)
 
-        val emptyView = findViewById<TextView>(R.id.empty_view)
+        val emptyViewDroplet = findViewById<ImageView>(R.id.empty_view_droplet)
+        val emptyViewText = findViewById<TextView>(R.id.empty_view_text)
+
         if (CycleRepository.getCycles().isEmpty()) {
             recyclerView.visibility = View.INVISIBLE
-            emptyView.visibility = View.VISIBLE
+            emptyViewDroplet.visibility = View.VISIBLE
+            emptyViewText.visibility = View.VISIBLE
         } else {
             recyclerView.visibility = View.VISIBLE
-            emptyView.visibility = View.INVISIBLE
+            emptyViewDroplet.visibility = View.INVISIBLE
+            emptyViewText.visibility = View.INVISIBLE
         }
 
 
