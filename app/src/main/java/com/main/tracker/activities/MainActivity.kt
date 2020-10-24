@@ -23,7 +23,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.darkTheme)
+            setContentView(R.layout.activity_main)
+        } else {
+            setTheme(R.style.AppTheme)
+            setContentView(R.layout.activity_main)
+        }
+
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         adapter = CycleAdapter(CycleRepository.getCycles())
         val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
@@ -54,6 +61,20 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this, NewCycleActivity::class.java)
                 startActivity(intent);
+            }
+        }
+        switch = findViewById<Switch>(R.id.btn_switch)
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            switch!!.isChecked = true
+        }
+
+        switch!!.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                recreate()
+            }else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                recreate()
             }
         }
     }
