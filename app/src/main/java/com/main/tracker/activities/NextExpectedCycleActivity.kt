@@ -3,8 +3,10 @@ package com.main.tracker.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.main.tracker.R
 import com.main.tracker.model.Cycle
 import com.main.tracker.model.CycleRepository
@@ -20,11 +22,12 @@ class NextExpectedCycleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nextexpectedcycle)
 
-        val today = Date()
+        val previousMonths = Calendar.getInstance()
         val nextYear = Calendar.getInstance()
-        nextYear.add(Calendar.YEAR,1)
+        nextYear.add(Calendar.YEAR, 1)
+        previousMonths.add(Calendar.MONTH, -2)
         val datePicker = findViewById<CalendarPickerView>(R.id.calendar)
-        datePicker.init(today, nextYear.time)
+        datePicker.init(previousMonths.time, nextYear.time)
 
 
         datePicker.setOnDateSelectedListener(object: CalendarPickerView.OnDateSelectedListener {
