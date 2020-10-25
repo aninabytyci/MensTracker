@@ -21,6 +21,12 @@ Mögliche Punkte:
 * Dark-Theme: Unterschiedliche Styles (z.B. Dark-Theme) 1 bis 2 Punkte
 * (Verwendung von Notifications 1 bis 2 Punkte)
 
+## Wireframe
+
+Ein Balsamiq-Wireframe skizziert das "Minimal Viable Product" des MensTrackers:
+
+![](img/wireframe.png)
+
 ## Links
 
 Kalender-Funktion (Drittkomponente einbinden):
